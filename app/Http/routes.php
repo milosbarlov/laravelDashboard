@@ -13,10 +13,12 @@
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    // home page
+    Route::get('/', function () { return view('welcome');});
     Route::get('/home', 'HomeController@index');
+
+    //Products pages
+    Route::get('/products','ProductsController@index');
 
 });
 
